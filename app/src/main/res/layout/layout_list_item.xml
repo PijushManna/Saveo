@@ -6,7 +6,7 @@
     <data>
         <variable
             name="model"
-            type="com.example.mvvmstarter.models.Picture" />
+            type="com.example.saveo.models.Picture" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

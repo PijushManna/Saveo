@@ -6,14 +6,18 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.mvvmstarter.ui.main.MainFragment"
+        android:name="com.example.saveo.ui.main.MainFragment"
         android:label="MainFragment" >
         <action
             android:id="@+id/action_mainFragment_to_detailsFragment"
-            app:destination="@id/detailsFragment" />
+            app:destination="@id/detailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.example.mvvmstarter.ui.main.DetailsFragment"
+        android:name="com.example.saveo.ui.main.DetailsFragment"
         android:label="DetailsFragment" />
 </navigation>
