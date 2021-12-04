@@ -9,7 +9,6 @@ import javax.inject.Singleton
 
 @Module
 class RetroModule {
-//    private val baseURL = "https://api.flickr.com/"
     private val baseURL = "https://randomuser.me/"
 
     @Provides

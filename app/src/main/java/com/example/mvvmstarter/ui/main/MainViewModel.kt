@@ -19,6 +19,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val _results = ArrayList<Result>()
     private val listAllData = MutableLiveData<List<Result>>()
     val allData: LiveData<List<Result>> = listAllData
+    val currentItem = MutableLiveData<Result>()
 
     @Inject
     lateinit var repository:RetroService
