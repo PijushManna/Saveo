@@ -7,6 +7,8 @@
         <entry key="app/src/main/res/layout/layout_list_item.xml" value="0.24791666666666667" />
         <entry key="app/src/main/res/layout/main_activity.xml" value="0.29444444444444445" />
         <entry key="app/src/main/res/layout/main_fragment.xml" value="0.29444444444444445" />
+        <entry key="app/src/main/res/menu/app_bar_menu.xml" value="0.2814814814814815" />
+        <entry key="app/src/main/res/menu/details_bar_menu.xml" value="0.2814814814814815" />
       </map>
     </option>
   </component>

@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.example.mvvmstarter.DetailsFragment"
+        android:name="com.example.mvvmstarter.ui.main.DetailsFragment"
         android:label="DetailsFragment" />
 </navigation>
