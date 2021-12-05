@@ -5,10 +5,12 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.example.saveo.MyApplication
 import com.example.saveo.di.RetroService
 import com.example.saveo.models.FakeUser
 import com.example.saveo.models.Result
+import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -29,18 +31,20 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun apiCall(){
-        repository.getAllData(48)?.enqueue(object : Callback<FakeUser> {
-            override fun onResponse(call: Call<FakeUser>, response: Response<FakeUser>) {
-                response.body()?.let {
-                    _results.addAll(it.results!!.toList())
-                    listAllData.value = _results
+        viewModelScope.launch {
+            repository.getAllData(48)?.enqueue(object : Callback<FakeUser> {
+                override fun onResponse(call: Call<FakeUser>, response: Response<FakeUser>) {
+                    response.body()?.let {
+                        _results.addAll(it.results!!.toList())
+                        listAllData.value = _results
+                    }
                 }
-            }
 
-            override fun onFailure(call: Call<FakeUser>, t: Throwable) {
-                Log.i(TAG,t.message!!)
-            }
+                override fun onFailure(call: Call<FakeUser>, t: Throwable) {
+                    Log.i(TAG,t.message!!)
+                }
+            })
+        }
 
-        })
     }
 }
