@@ -17,6 +17,7 @@ class DetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
         binding = FragmentDetailsBinding.inflate(inflater,container,false)
         viewModel.currentItem.observe(viewLifecycleOwner,{
             binding.model = it

@@ -34,7 +34,6 @@ class MainFragment : Fragment() {
         viewModel.apiCall()
         binding.lifecycleOwner = viewLifecycleOwner
         viewModel.allData.observe(viewLifecycleOwner,{
-            Log.i("Adapter", it.size.toString())
             adapter.submitList(it)
             adapter2.submitList(it)
             adapter.notifyDataSetChanged()
