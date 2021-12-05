@@ -29,7 +29,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun apiCall(){
-        repository.getAllData(12)?.enqueue(object : Callback<FakeUser> {
+        repository.getAllData(48)?.enqueue(object : Callback<FakeUser> {
             override fun onResponse(call: Call<FakeUser>, response: Response<FakeUser>) {
                 response.body()?.let {
                     _results.addAll(it.results!!.toList())
